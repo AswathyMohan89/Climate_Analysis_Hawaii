@@ -48,10 +48,10 @@ def welcome():
 
     )
 
-
+#Router for precipitation
 @app.route("/api/v1.0/precipitation")
 def prcp():
-
+	#use query to retrieve data
 	result = session.execute("SELECT max(date) FROM measurements order by date ").first()
 	new_d=result[0]
 	month=new_d.split("-")[2]
